@@ -7,6 +7,10 @@ function Book(title , author, pages, read) {
     this.read = read;
 };
 
-function addBookToLibrary() {
-    
+function addBookToLibrary(Book) {
+    myLibrary.push(Book);
 };
+
+const Hobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", "read.");
+const Nicomachean = new Book("Nicomachean Ethics", "Aristotle", "688", "not read.");
+const Republic = new Book("Politics", "Plato", "408", "not read.");
