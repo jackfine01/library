@@ -23,3 +23,11 @@ const Republic = new Book("Politics", "Plato", "408", "not read.");
 addBookToLibrary(Hobbit);
 addBookToLibrary(Nicomachean);
 addBookToLibrary(Republic);
+
+// add display mechanics for html.
+
+// add library loop function to add to existing display.
+
+// add new book button and form in html.
+
+// add remove book button.
