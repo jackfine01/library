@@ -46,6 +46,21 @@ const displayLibrary = function(){
             card.appendChild(cardPages);
             cardPages.innerHTML = Book.pages + " Pages";
 
+            const readDisplay = document.createElement("div");
+            readDisplay.className = "readDisplay";
+            card.appendChild(readDisplay);
+            readDisplay.innerHTML = Book.read;
+
+            const readButton = document.createElement("button")
+            readButton.className = "readButton";
+            card.appendChild(readButton);
+            readButton.innerHTML = "read?";
+
+            const deleteButton = document.createElement("button")
+            readButton.className = "deleteButton";
+            card.appendChild(deleteButton);
+            deleteButton.innerHTML = "delete";
+
     },);
 };
 // add new book button and form in html.
