@@ -5,7 +5,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.dataKey = myLibrary.length
+    this.dataKey = myLibrary.length;
 };
 
 function addBookToLibrary(Book) {
@@ -53,6 +53,12 @@ const displayLibrary = function(){
             card.appendChild(readDisplay);
             readDisplay.innerHTML = Book.read;
 
+            const index = document.createElement('div')
+            index.className = "index";
+            card.appendChild(index);
+            index.innerHTML = myLibrary[i].dataKey;
+
+
             const readButton = document.createElement("button")
             readButton.className = "readButton";
             card.appendChild(readButton);
@@ -63,12 +69,13 @@ const displayLibrary = function(){
             card.appendChild(deleteButton);
             deleteButton.innerHTML = "delete";
             
-            const index = document.createElement('div')
-            index.className = "index";
-            card.appendChild(index);
-            index.innerHTML = myLibrary[i].dataKey;
+            deleteButton.addEventListener('click', () =>{
+                console.log(index.innerHTML + "should be deleted");
+                myLibrary[i-1].deleteBook();
+            })
             i++;
     },);
+
 };
 // add new book button and form in html.
 
