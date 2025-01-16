@@ -112,6 +112,17 @@ const form = document.querySelector('form');
 // add remove book button.
 
 Book.prototype.deleteBook = function(){
-    myLibrary.splice(this.dataKey,1)
-    displayLibrary();
+    if(myLibrary.length === 1){
+        myLibrary.pop(0)
+        displayLibrary();
+    }
+    else if(this.dataKey===myLibrary.length){
+        myLibrary.pop(this.dataKey)
+        displayLibrary();
+    }
+    else{
+        myLibrary.splice(this.dataKey,1)
+        displayLibrary();
+    }
+
  };
