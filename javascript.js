@@ -12,16 +12,14 @@ function addBookToLibrary(Book) {
     console.log(myLibrary);
 };
 
-function info(Book){
-    return (Book.title + " by " + Book.author + ", " + Book.pages + " pages, " + Book.read)
-};
+
 
 const Hobbit = new Book("Hobbit", "J.R.R. Tolkien", "295", "read.");
 const Ethics = new Book("Ethics", "Aristotle", "688", "not read.");
 const Republic = new Book("Politics", "Plato", "408", "not read.");
 
 addBookToLibrary(Hobbit);
-addBookToLibrary(Nicomachean);
+addBookToLibrary(Ethics);
 addBookToLibrary(Republic);
 
 // add display mechanics for html.
@@ -33,8 +31,24 @@ myLibrary.forEach(Book => {
     card.className = "card";
     container.appendChild(card);
 
-    card.innerHTML = info(this.Book);
-});
+        const cardTitle = document.createElement("div");
+        cardTitle.className = "cardTitle";
+        card.appendChild(cardTitle);
+        cardTitle.innerHTML = Book.title;
+
+        const cardAuthor = document.createElement("div");
+        cardAuthor.className = "cardTitle";
+        card.appendChild(cardAuthor);
+        cardAuthor.innerHTML = Book.author;
+
+        const cardPages = document.createElement("div");
+        cardPages.className = "cardTitle";
+        card.appendChild(cardPages);
+        cardPages.innerHTML = Book.pages + " Pages";
+
+
+    
+},);
 
 // add library loop function to add to existing display.
 
