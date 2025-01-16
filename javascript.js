@@ -23,6 +23,7 @@ const resetlib = function(){
 }
 const displayLibrary = function(){
     resetlib();
+    let i = 0;
     myLibrary.forEach(Book => {
         
         const card = document.createElement("div");
@@ -61,7 +62,12 @@ const displayLibrary = function(){
             readButton.className = "deleteButton";
             card.appendChild(deleteButton);
             deleteButton.innerHTML = "delete";
-
+            
+            const index = document.createElement('div')
+            index.className = "index";
+            card.appendChild(index);
+            index.innerHTML = myLibrary[i].dataKey;
+            i++;
     },);
 };
 // add new book button and form in html.
@@ -98,6 +104,6 @@ const form = document.querySelector('form');
 // add remove book button.
 
 Book.prototype.deleteBook = function(){
-    myLibrary = myLibrary.splice(this.dataKey,1)
+    myLibrary.splice(this.dataKey,1)
     displayLibrary();
  };
