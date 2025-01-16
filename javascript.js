@@ -29,7 +29,7 @@ myLibrary.forEach(Book => {
     
     const card = document.createElement("div");
     card.className = "card";
-    container.appendChild(card);
+    main.appendChild(card);
 
         const cardTitle = document.createElement("div");
         cardTitle.className = "cardTitle";
@@ -37,12 +37,12 @@ myLibrary.forEach(Book => {
         cardTitle.innerHTML = Book.title;
 
         const cardAuthor = document.createElement("div");
-        cardAuthor.className = "cardTitle";
+        cardAuthor.className = "cardAuthor";
         card.appendChild(cardAuthor);
         cardAuthor.innerHTML = Book.author;
 
         const cardPages = document.createElement("div");
-        cardPages.className = "cardTitle";
+        cardPages.className = "cardPages";
         card.appendChild(cardPages);
         cardPages.innerHTML = Book.pages + " Pages";
 
