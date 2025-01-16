@@ -12,16 +12,6 @@ function addBookToLibrary(Book) {
     console.log(myLibrary);
 };
 
-
-
-// const Hobbit = new Book("Hobbit", "J.R.R. Tolkien", "295", "read.");
-// const Ethics = new Book("Ethics", "Aristotle", "688", "not read.");
-// const Republic = new Book("Politics", "Plato", "408", "not read.");
-
-// addBookToLibrary(Hobbit);
-// addBookToLibrary(Ethics);
-// addBookToLibrary(Republic);
-
 const container = document.getElementById("main");
 const resetlib = function(){
     let cardDelete = document.querySelectorAll(".card")
