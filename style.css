@@ -1,0 +1,19 @@
+.html, body{
+    height: 100vh
+}
+
+:root{
+
+}
+
+.container{
+    display: flex;
+}
+
+.header{
+    height: 10%;
+}
+
+.main{
+    display: grid;
+}
