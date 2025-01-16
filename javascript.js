@@ -1,10 +1,11 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.dataKey = myLibrary.length
 };
 
 function addBookToLibrary(Book) {
@@ -73,7 +74,7 @@ const form = document.querySelector('form');
         const formAuth = form.elements['author'].value;
         const formPage = form.elements['pages'].value;
 
-        const addedBook = new Book(formTitle, formAuth, formPage, "not read.")
+        const addedBook = new Book(formTitle, formAuth, formPage, "not read")
         addBookToLibrary(addedBook);
         displayLibrary();
     }
@@ -81,5 +82,22 @@ const form = document.querySelector('form');
 
 // add read book button.
 
+ Book.prototype.readBook = function(){
+    if(this.read == 'not read'){
+    this.read = "read"
+    console.log('reading')
+    displayLibrary();
+    }
+    else if(this.read =='read'){
+    this.read = "not read"
+    console.log('unreading')
+    displayLibrary();
+    }
+ };
+
 // add remove book button.
 
+Book.prototype.deleteBook = function(){
+    myLibrary = myLibrary.splice(this.dataKey,1)
+    displayLibrary();
+ };
