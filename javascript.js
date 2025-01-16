@@ -64,6 +64,11 @@ const displayLibrary = function(){
             card.appendChild(readButton);
             readButton.innerHTML = "read?";
 
+            readButton.addEventListener('click', () =>{
+                console.log(index.innerHTML + "should be read");
+                myLibrary[i-1].readBook();
+            })
+            
             const deleteButton = document.createElement("button")
             readButton.className = "deleteButton";
             card.appendChild(deleteButton);
