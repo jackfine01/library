@@ -26,6 +26,7 @@
     display: grid;
     width: 80%;
     margin: 20px;
+    grid-template-columns: repeat(auto-fit, 55px);
     gap: 10px;
 }
 
@@ -34,8 +35,8 @@
     color: white;
     border: 2px solid red;
     height: 200px;
-    width: 55px;
     width: fit-content;
+    padding: 2px;
 }
 
 .cardTitle{
