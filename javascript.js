@@ -65,8 +65,7 @@ const displayLibrary = function(){
             readButton.innerHTML = "read?";
 
             readButton.addEventListener('click', () =>{
-                console.log(index.innerHTML + "should be read");
-                myLibrary[i-1].readBook();
+                Book.readBook();
             })
             
             const deleteButton = document.createElement("button")
@@ -75,8 +74,7 @@ const displayLibrary = function(){
             deleteButton.innerHTML = "delete";
             
             deleteButton.addEventListener('click', () =>{
-                console.log(index.innerHTML + "should be deleted");
-                myLibrary[i-1].deleteBook();
+                Book.deleteBook();
             })
             i++;
     },);
@@ -103,12 +101,10 @@ const form = document.querySelector('form');
  Book.prototype.readBook = function(){
     if(this.read == 'not read'){
     this.read = "read"
-    console.log('reading')
     displayLibrary();
     }
     else if(this.read =='read'){
     this.read = "not read"
-    console.log('unreading')
     displayLibrary();
     }
  };
